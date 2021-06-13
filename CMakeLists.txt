@@ -4,10 +4,24 @@ include(pico_sdk_import.cmake)
 
 project(organ  C CXX ASM)
 
-
 pico_sdk_init()
 
 add_executable(organ organ.cpp )
+
+target_sources(organ PRIVATE 
+			led.cpp 
+			led.hpp
+			i2c_cl.cpp
+			i2c_cl.hpp
+			spi_cl.cpp
+			spi_cl.hpp
+			n5110_lcd.cpp
+			n5110_lcd.hpp
+			bmp180.cpp
+			bmp180.hpp
+			sht21.cpp
+			sht21.hpp
+			)
 
 # create map/bin/hex file etc.
  pico_add_extra_outputs(organ)
